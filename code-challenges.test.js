@@ -23,7 +23,7 @@ const secretCodeWord3 = "Eccentric"
 // Expected output: "3cc3ntr1c"
 
 
-
+write a code that took a number an dreplace it with a number
 // b) Create the function that makes the test pass.
 
 
@@ -56,6 +56,6 @@ const hand2 = [5, 5, 3, 3, 4]
 const hand3 = [5, 5, 5, 5, 4]
 // Expected output: false
 
-
+take the hand and use a higher order function that can verify of the hand is a thee of  a kind with a matching pair
 
 // b) Create the function that makes the test pass.
