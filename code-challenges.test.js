@@ -86,3 +86,117 @@ const hand3 = [5, 5, 5, 5, 4];
 //take the hand and use a higher order function that can verify of the hand is a thee of  a kind with a matching pair
 
 // b) Create the function that makes the test pass.
+const resultLogic = {
+    fiveOfAKind: () => {
+        for(let i = 0; i <= 1; i++){
+            let count = 1;
+            for(let j = i + 1; j < diceArray.length; j++){
+               if(diceArray[i] == diceArray[j])
+                 count++;
+           }
+            if(count == 5)
+             return true;
+          }
+           return false;
+    },
+    fourOfAKind: () => {
+            for(let i = 0; i <= 1; i++){
+              let count = 1;
+              for(let j = i + 1; j < diceArray.length; j++){
+                 if(diceArray[i]==diceArray[j])
+                   count++;
+             }
+              if(count == 4)
+               return true;
+            }
+             return false;
+    },
+    fullHouse: () => {
+        return false;
+         if threeOfAKind === true && pair === true
+    },
+    sixHighStraight: () => {
+        // if diceArr === 2,3,4,5,6. There should always be a 6, never a 1 and every dice should be different
+        if (diceArray.includes(2) && diceArray.includes(3) && diceArray.includes(4) && diceArray.includes(5) && diceArray.includes(6)) {
+            return true;
+        }
+        return false;
+    },
+    fiveHighStraight: () => {
+        // if diceArr === 1,2,3,4,5. There should never be a 6 and every dice should be different
+        if (diceArray.includes(1) && diceArray.includes(2) && diceArray.includes(3) && diceArray.includes(4) && diceArray.includes(5)) {
+            return true;
+        }
+        return false;
+    },
+    threeOfAKind: () => {
+        for (let i = 0; i <= 3; i++) {
+            let count = 1;
+            for (let j = i + 1; j < diceArray.length; j++) {
+                if (diceArray[i] == diceArray[j])
+                    count++;
+            }
+            if (count == 3)
+                return true;
+        }
+        return false;
+    },
+    twoPair: () => {
+        for (var i = 0; i < diceArray.length; i++) {
+            var count = 1;
+            var pairs = 0;
+            for (var j = i + 1; j < diceArray.length; j++) {
+                if (diceArray[i] == diceArray[j])
+                    count++;
+            }
+            if (count == 2) {
+                pairs++;
+                let firstPair = [];
+                console.log(diceArray);
+                console.log(`i = ${i} j = ${j}`);
+                return true;
+            }
+        }
+        return false;
+    }
+     if diceArr contains pair x 2
+            for (var i = 0; i <= 1; i++) {
+                var count = 1;
+                for (var j = i + 1; j < diceArray.length; j++) {
+                    if (diceArray[i] == diceArray[j])
+                        count++;
+                } if (count == 2) {
+                    count = 0;
+                    console.log(diceArray);
+
+                    diceArray.splice(i, i + 1) && diceArray.splice(j, j + 1);
+                    console.log(diceArray);
+                    for (var i = 0; i <= 1; i++) {
+                        var count = 1;
+                        for (var j = i + 1; j < diceArray.length; j++) {
+                            if (diceArray[i] == diceArray[j])
+                                count++;
+                        } if (count == 2) {
+                            return true;
+                        }
+
+                    }
+                    return false;
+                }
+            }
+        return false;
+     }
+    ,
+    pair: () => {
+        for (let i = 0; i < diceArray.length; i++) {
+            let count = 1;
+            for (let j = i + 1; j < diceArray.length; j++) {
+                if (diceArray[i] == diceArray[j])
+                    count++;
+            }
+            if (count == 2)
+                return true;
+        }
+        return false;
+    }
+}
