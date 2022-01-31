@@ -54,7 +54,17 @@ const letterA = "a";
 const arrayOfWords2 = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach"];
 const letterE = "e";
 // Expected output: ["Cherry", "Blueberry", "Peach"]
+// a describe method that lists the name of the function OR naming of the particular test.
+describe("newArray", () => {
 
+  // a test/it method, nested within the describe block, that in plain words, describes that the function does.
+  it("creats a filter that verifies perticular letters inside of the words in the array", () => {
+
+    //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+    expect(newArray(arrayOfWords1)).toEqual(["Apple", "Banana", "Orange"])
+    expect(newArray(arrayOfWords2)).toEqual(["Cherry", "Blueberry", "Peach"])
+  })
+})
 // b) Create the function that makes the test pass.
 
 const filterWord = (array) => {
