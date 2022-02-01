@@ -88,7 +88,7 @@ const hand3 = [5, 5, 5, 5, 4];
 // b) Create the function that makes the test pass.
 //I'm going to attempt to find write a code that identifies pairs then after ive done that i can take write that with one looking for a set of three and the other a pair
 
-unction pairs(arr) {
+function pairs(arr) {
     var res = [],
         l = arr.length;
     for(var i=0; i<l; ++i)
@@ -99,7 +99,9 @@ unction pairs(arr) {
 pairs([5, 5, 5, 3, 3]).forEach(function(pair){
 pairs([5, 5, 3, 3, 4]).forEach(function(pair){
 pairs([5, 5, 5, 5, 4]).forEach(function(pair){
-    return true or false
+    return true
+    elseif (false) {
+  
    {
 
     };
