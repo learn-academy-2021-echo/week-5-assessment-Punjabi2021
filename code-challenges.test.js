@@ -24,7 +24,7 @@ const secretCodeWord3 = "Eccentric";
 // a describe method that lists the name of the function OR naming of the particular test.
 describe("strReplace", () => {
   // a test/it method, nested within the describe block, that in plain words, describes that the function does.
-  it("Will replace the letter A with the number four using RegExp", () => {
+  it("Will replace the letter A with the number four using RegExp Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects. These patterns are used with the replace()methods of String . this is the reason i decided to use RegExp ", () => {
     expect(strReplace(secretCodeWord1)).toEqual("L4ck4d41s1c4l");
     expect(strReplace(secretCodeWord2)).toEqual("G0bbl3dyg00k");
     expect(strReplace(secretCodeWord3)).toEqual("3cc3ntr1c");
@@ -34,7 +34,7 @@ describe("strReplace", () => {
 //write a code that took a number and replace it with a number
 
 // b) Create the function that makes the test pass.
-
+//I had a bit more of repetitive code but the prettier function would organize it differently after I saved it and i gave up after the second time thanked my computer sor making me more presentable.
 const codeWord = (string) => {
   let strReplace = string
     .replace(/a/gi, 4)
@@ -66,11 +66,11 @@ describe("newArray", () => {
   })
 })
 // b) Create the function that makes the test pass.
-
+//your right if I don't specify what i want returned it will only give what im asking for thus making my answer wrong.
 const filterWord = (array) => {
   let newArray=array
 const result = words.filter(word => word.include(a))
-  return array;
+  return array.filter(word => word.include(a));
 
 // --------------------3) Create a function that takes in an array of 5 numbers and determines whether or not the array is a “full house”. A full house is exactly one pair and one three of a kind.
 
@@ -83,120 +83,24 @@ const hand2 = [5, 5, 3, 3, 4];
 const hand3 = [5, 5, 5, 5, 4];
 // Expected output: false
 
-//take the hand and use a higher order function that can verify of the hand is a thee of  a kind with a matching pair
+//I'm sorry that was only intended for me to remember my train of thought but i decided to change my approach
 
 // b) Create the function that makes the test pass.
-const resultLogic = {
-    fiveOfAKind: () => {
-        for(let i = 0; i <= 1; i++){
-            let count = 1;
-            for(let j = i + 1; j < diceArray.length; j++){
-               if(diceArray[i] == diceArray[j])
-                 count++;
-           }
-            if(count == 5)
-             return true;
-          }
-           return false;
-    },
-    fourOfAKind: () => {
-            for(let i = 0; i <= 1; i++){
-              let count = 1;
-              for(let j = i + 1; j < diceArray.length; j++){
-                 if(diceArray[i]==diceArray[j])
-                   count++;
-             }
-              if(count == 4)
-               return true;
-            }
-             return false;
-    },
-    fullHouse: () => {
-        return false;
-         if threeOfAKind === true && pair === true
-    },
-    sixHighStraight: () => {
-        // if diceArr === 2,3,4,5,6. There should always be a 6, never a 1 and every dice should be different
-        if (diceArray.includes(2) && diceArray.includes(3) && diceArray.includes(4) && diceArray.includes(5) && diceArray.includes(6)) {
-            return true;
-        }
-        return false;
-    },
-    fiveHighStraight: () => {
-        // if diceArr === 1,2,3,4,5. There should never be a 6 and every dice should be different
-        if (diceArray.includes(1) && diceArray.includes(2) && diceArray.includes(3) && diceArray.includes(4) && diceArray.includes(5)) {
-            return true;
-        }
-        return false;
-    },
-    threeOfAKind: () => {
-        for (let i = 0; i <= 3; i++) {
-            let count = 1;
-            for (let j = i + 1; j < diceArray.length; j++) {
-                if (diceArray[i] == diceArray[j])
-                    count++;
-            }
-            if (count == 3)
-                return true;
-        }
-        return false;
-    },
-    twoPair: () => {
-        for (var i = 0; i < diceArray.length; i++) {
-            var count = 1;
-            var pairs = 0;
-            for (var j = i + 1; j < diceArray.length; j++) {
-                if (diceArray[i] == diceArray[j])
-                    count++;
-            }
-            if (count == 2) {
-                pairs++;
-                let firstPair = [];
-                console.log(diceArray);
-                console.log(`i = ${i} j = ${j}`);
-                return true;
-            }
-        }
-        return false;
-    }
-     if diceArr contains pair x 2
-            for (var i = 0; i <= 1; i++) {
-                var count = 1;
-                for (var j = i + 1; j < diceArray.length; j++) {
-                    if (diceArray[i] == diceArray[j])
-                        count++;
-                } if (count == 2) {
-                    count = 0;
-                    console.log(diceArray);
+//I'm going to attempt to find write a code that identifies pairs then after ive done that i can take write that with one looking for a set of three and the other a pair
 
-                    diceArray.splice(i, i + 1) && diceArray.splice(j, j + 1);
-                    console.log(diceArray);
-                    for (var i = 0; i <= 1; i++) {
-                        var count = 1;
-                        for (var j = i + 1; j < diceArray.length; j++) {
-                            if (diceArray[i] == diceArray[j])
-                                count++;
-                        } if (count == 2) {
-                            return true;
-                        }
-
-                    }
-                    return false;
-                }
-            }
-        return false;
-     }
-    ,
-    pair: () => {
-        for (let i = 0; i < diceArray.length; i++) {
-            let count = 1;
-            for (let j = i + 1; j < diceArray.length; j++) {
-                if (diceArray[i] == diceArray[j])
-                    count++;
-            }
-            if (count == 2)
-                return true;
-        }
-        return false;
-    }
+unction pairs(arr) {
+    var res = [],
+        l = arr.length;
+    for(var i=0; i<l; ++i)
+        for(var j=i+1; j<l; ++j)
+            res.push([arr[i], arr[j]]);
+    return res;
 }
+pairs([5, 5, 5, 3, 3]).forEach(function(pair){
+pairs([5, 5, 3, 3, 4]).forEach(function(pair){
+pairs([5, 5, 5, 5, 4]).forEach(function(pair){
+    return true or false
+   {
+
+    };
+});
